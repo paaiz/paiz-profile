@@ -1,0 +1,102 @@
+.haheo {
+  background-color: white;
+  height: 100vh;
+  z-index: 10;
+  position: relative;
+  z-index: -2;
+}
+
+.header-bg {
+  position: absolute;
+  background-color: #010204;
+  height: 225px;
+  width: 40vw;
+  z-index: -1;
+}
+
+.about-header {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem 0;
+}
+
+.about-image {
+  width: fit-content;
+  overflow: hidden;
+  width: 250px;
+  height: 250px;
+}
+
+.about-image:hover img {
+  transform: scale(1.5);
+}
+
+.about-image img {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.about-header h1 {
+  line-height: 70px;
+}
+
+.about-section {
+  padding: 2rem 2rem;
+}
+
+.about-title {
+  display: flex;
+  align-items: center;
+}
+
+.about-title h1 {
+  font-size: 25px;
+}
+
+.about-title span {
+  height: 1px;
+  width: 60%;
+  background-color: black;
+  margin-left: 2rem;
+}
+
+.about-section p {
+  font-size: 20px;
+}
+
+.about-profile {
+  width: 250px;
+  height: 250px;
+}
+
+h1 {
+  margin: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .header-bg {
+    width: 100vw;
+  }
+
+  .about-title h1 {
+    font-size: 20px;
+  }
+
+  .about-section p {
+    font-size: 15px;
+  }
+
+  .about-header h1 {
+    font-size: 27px;
+  }
+
+  .about-header {
+    padding: 4.5rem 2rem 0;
+  }
+
+  .about-image,
+  .about-profile {
+    width: 180px;
+    height: 180px;
+  }
+}

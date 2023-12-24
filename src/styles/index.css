@@ -1,0 +1,271 @@
+:root {
+  --main-color: #121212;
+  --secondary-color: #272727;
+
+  --paragraph-color: #c4c4c4;
+
+  --xmark-color: white;
+  --panel-bg: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--main-color);
+  color: white;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  height: auto;
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+}
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 6px;
+  border: 3px solid var(--secondary-color);
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  transition: opacity 250ms linear 250ms, visibility 250ms linear 250ms;
+}
+
+.container[data-appear="false"] {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 250ms linear, visibility 250ms linear;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5rem 0;
+  width: 40vw;
+}
+
+.content-container {
+  display: flex;
+
+  justify-content: center;
+  flex-direction: column;
+
+  max-width: 42rem;
+}
+
+.main-header h1 {
+  margin: 0;
+}
+
+.main-header p {
+  margin: 10px 0;
+  color: var(--paragraph-color);
+}
+
+.menu ul {
+  margin: 0;
+  padding-top: 30px;
+}
+
+.menu li {
+  list-style-type: none;
+  width: max-content;
+  color: #959595;
+  font-weight: 600;
+  letter-spacing: 0.15px;
+  font-size: 1.2em;
+  transition: color 0.25s linear;
+  cursor: pointer;
+  line-height: 1.15;
+  display: block;
+  position: relative;
+}
+
+.menu li::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 0.2s, transform 300ms;
+  transform: translate3d(-25%, 0, 0);
+}
+
+.menu li a {
+  overflow: hidden;
+}
+
+.menu li:hover::before,
+.menu li:hover {
+  color: #cecece;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.menu li + li {
+  margin-top: 1.25rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer p {
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.social-media a {
+  font-size: 23px;
+  color: inherit;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.social-media a svg {
+  transition: transform ease-in-out 0.2s;
+}
+
+.social-media a svg:hover {
+  transform: scale(1.5);
+}
+
+.panel {
+  position: absolute;
+  background-color: var(--panel-bg);
+  height: 100%;
+  width: 40vw;
+  top: 0;
+  right: 0;
+  overflow-y: auto;
+  color: black;
+  z-index: 11;
+  transform: translateX(100%);
+  transition: transform 750ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.panel[data-appear="true"] {
+  transform: translateX(0);
+}
+
+.xmark {
+  border: 0;
+  background-color: inherit;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.xmark:hover {
+  opacity: 0.6;
+}
+
+.line,
+.line::before,
+.line::after {
+  display: block;
+  content: "";
+  height: 4px;
+  width: 45px;
+}
+
+.line::after {
+  position: absolute;
+  left: 0;
+  height: 4px;
+  background-color: var(--xmark-color);
+  rotate: -45deg;
+}
+
+.line::before {
+  position: absolute;
+  left: 0;
+  height: 4px;
+  background-color: var(--xmark-color);
+  rotate: 45deg;
+}
+
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 15px;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.1s linear;
+}
+
+@media screen and (max-width: 900px) {
+  .content {
+    width: 500px;
+  }
+
+  .main-header h1 {
+    font-size: 25px;
+  }
+
+  .panel {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    padding: 2rem 2rem 7rem 2rem;
+  }
+
+  .main-header h1 {
+    margin: 5px 0;
+  }
+
+  .footer p {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .main-header h1 {
+    font-size: 25px;
+  }
+
+  .main-header p {
+    font-size: 13px;
+  }
+
+  .social-media {
+    display: none;
+  }
+
+  .footer {
+    padding-top: 15px;
+  }
+
+  .footer p {
+    font-size: 15px;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,66 @@
+.social-header {
+  background-color: #00346e;
+  color: white;
+  height: 270px;
+  padding: 5rem 4rem 4rem 2rem;
+}
+
+.social-header h1 {
+  font-size: 45px;
+  margin: 0;
+}
+
+.social-header p {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.social-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-content a {
+  color: white;
+}
+
+.social-link {
+  --t_timing: 2s;
+  --transition: background-size var(--t_timing) cubic-bezier(0.16, 1, 0.3, 1),
+    background-position var(--t_timing) ease;
+
+  height: 10pc;
+  position: relative;
+  transition: var(--transition);
+  background-size: 100% auto;
+}
+
+.inside {
+  display: flex;
+}
+
+.inside svg {
+  margin: 0.75rem 0;
+  bottom: 15px;
+  font-size: 1.5em;
+  font-weight: 600;
+  left: 32.5px;
+  letter-spacing: 1px;
+  position: absolute;
+  color: white;
+}
+
+.inside h1 {
+  margin: 0.75rem 0;
+  bottom: 12.5px;
+  font-size: 1.5em;
+  font-weight: 600;
+  left: 65px;
+  letter-spacing: 1px;
+  position: absolute;
+  color: white;
+}
+
+.social-link:hover {
+  background-size: 200% auto;
+}

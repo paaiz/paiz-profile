@@ -1,0 +1,53 @@
+.tools-bg {
+  height: 100vh;
+  background-color: var(--secondary-color);
+}
+
+.tools-header {
+  background-color: #3097bf;
+  color: white;
+  height: 270px;
+  padding: 5rem 4rem 4rem 2rem;
+}
+
+.tools-header h1 {
+  font-size: 45px;
+  margin: 0;
+}
+
+.tools-header p {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.tech-bg {
+  background-color: var(--secondary-color);
+
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 20px;
+
+  padding-bottom: 30px;
+}
+
+.tech-items {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tech-items:nth-child(-n + 3) {
+  margin-top: 20px;
+}
+
+.tech-items svg {
+  width: 42px;
+  height: 42px;
+}
+
+.tech-items p {
+  color: var(--paragraph-color);
+  margin-top: 2px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
