@@ -5,7 +5,6 @@
   --paragraph-color: #c4c4c4;
 
   --xmark-color: white;
-  --panel-bg: inherit;
 }
 
 * {
@@ -154,7 +153,6 @@ body {
 
 .panel {
   position: absolute;
-  background-color: var(--panel-bg);
   height: 100%;
   width: 40vw;
   top: 0;
