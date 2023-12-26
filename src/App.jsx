@@ -27,10 +27,6 @@ export default function App() {
     { icon: SiInstagram, link: "https://example.com" },
   ];
 
-  const isPanelExist = (panelName) => {
-    return panelName === panel;
-  };
-
   const closePanel = () => {
     setIsPanelVisible(false);
     setTimeout(() => setPanel(null), 650);
@@ -56,13 +52,13 @@ export default function App() {
         </div>
 
         {/* Menu here */}
-        {isPanelExist("about") && <About />}
+        {"about" === panel && <About />}
 
-        {isPanelExist("project") && <Projects />}
+        {"projects" === panel && <Projects />}
 
-        {isPanelExist("tools") && <Tools />}
+        {"tools" === panel && <Tools />}
 
-        {isPanelExist("social") && <Social />}
+        {"social" === panel && <Social />}
       </div>
 
       <div className="container" data-appear={panel == null}>
