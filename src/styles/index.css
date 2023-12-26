@@ -94,7 +94,6 @@ body {
   transition: color 0.25s linear;
   cursor: pointer;
   line-height: 1.15;
-  display: block;
   position: relative;
 }
 
@@ -109,10 +108,6 @@ body {
   opacity: 0;
   transition: opacity 0.2s, transform 300ms;
   transform: translate3d(-25%, 0, 0);
-}
-
-.menu li a {
-  overflow: hidden;
 }
 
 .menu li:hover::before,
@@ -171,8 +166,8 @@ body {
 .xmark {
   border: 0;
   background-color: inherit;
-  width: 45px;
-  height: 45px;
+  width: 55px;
+  height: 40px;
   cursor: pointer;
 }
 
@@ -184,13 +179,13 @@ body {
 .line::before,
 .line::after {
   display: block;
+  position: absolute;
   content: "";
   height: 4px;
   width: 45px;
 }
 
 .line::after {
-  position: absolute;
   left: 0;
   height: 4px;
   background-color: var(--xmark-color);
@@ -198,7 +193,6 @@ body {
 }
 
 .line::before {
-  position: absolute;
   left: 0;
   height: 4px;
   background-color: var(--xmark-color);
