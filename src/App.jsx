@@ -17,7 +17,7 @@ export default function App() {
 
   const content = [
     { name: "About", unique: "about" },
-    { name: "Projects", unique: "project" },
+    { name: "Projects", unique: "projects" },
     { name: "Tools", unique: "tools" },
     { name: "Social Media", unique: "social" },
   ];
