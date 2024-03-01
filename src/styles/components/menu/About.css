@@ -1,9 +1,7 @@
-.haheo {
+.about-bg {
+  height: 100vh;
   background-color: white;
-  height: 100svh;
-  z-index: 10;
-  position: relative;
-  z-index: -2;
+  z-index: 1;
 }
 
 .header-bg {
@@ -11,7 +9,7 @@
   background-color: #010204;
   height: 225px;
   width: 40vw;
-  z-index: -1;
+  z-index: 2;
 }
 
 .about-header {
@@ -25,6 +23,8 @@
   overflow: hidden;
   width: 250px;
   height: 250px;
+  display: block;
+  z-index: 3;
 }
 
 .about-image:hover img {
@@ -98,6 +98,12 @@ h1 {
   .about-profile {
     width: 180px;
     height: 180px;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .about-section p {
+    font-size: 15px;
   }
 }
 
