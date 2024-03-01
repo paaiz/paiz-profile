@@ -19,6 +19,34 @@ import {
 } from "@icons-pack/react-simple-icons";
 import { Tooltip } from "react-tooltip";
 
+export default function Tools() {
+  return (
+    <>
+      <div className="tools-bg">
+        <div className="tools-header">
+          <h1>Tools</h1>
+          <p>A list of my daily basis tools and other things that I choose to learn for.</p>
+        </div>
+
+        <div className="tech-bg">
+          {technologies.map((tech, index) => (
+            <div className="tech-items">
+              <a href={tech.link} key={index}>
+                <tech.icon
+                  color="default"
+                  data-tooltip-id={tech.name}
+                  data-tooltip-content={tech.name}
+                />
+              </a>
+              <Tooltip id={tech.name} style={{ backgroundColor: "black" }} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}
+
 const technologies = [
   {
     icon: SiJavascript,
@@ -102,31 +130,3 @@ const technologies = [
     link: "https://example.com",
   },
 ];
-
-export default function Tools() {
-  return (
-    <>
-      <div className="tools-bg">
-        <div className="tools-header">
-          <h1>Tools</h1>
-          <p>A list of my daily basis tools and other things that I choose to learn for.</p>
-        </div>
-
-        <div className="tech-bg">
-          {technologies.map((tech, index) => (
-            <div className="tech-items">
-              <a href={tech.link} key={index}>
-                <tech.icon
-                  color="default"
-                  data-tooltip-id={tech.name}
-                  data-tooltip-content={tech.name}
-                />
-              </a>
-              <Tooltip id={tech.name} style={{ backgroundColor: "black" }} />
-            </div>
-          ))}
-        </div>
-      </div>
-    </>
-  );
-}
