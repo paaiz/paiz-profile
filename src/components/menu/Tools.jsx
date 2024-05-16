@@ -2,7 +2,6 @@ import "@/styles/components/menu/Tools.css";
 import {
   SiJavascript,
   SiReact,
-  SiDiscord,
   SiGithub,
   SiGoogle,
   SiCss3,
@@ -16,6 +15,7 @@ import {
   SiExpress,
   SiPython,
   SiNextdotjs,
+  SiTailwindcss,
 } from "@icons-pack/react-simple-icons";
 import { Tooltip } from "react-tooltip";
 
@@ -31,7 +31,7 @@ export default function Tools() {
         <div className="tech-bg">
           {technologies.map((tech, index) => (
             <div className="tech-items">
-              <a href={tech.link} key={index}>
+              <a href={tech.link} key={index} target="_blank" rel="noreferrer">
                 <tech.icon
                   color="default"
                   data-tooltip-id={tech.name}
@@ -51,82 +51,82 @@ const technologies = [
   {
     icon: SiJavascript,
     name: "JavaScript",
-    link: "https://example.com",
+    link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   },
   {
     icon: SiReact,
     name: "React",
-    link: "https://example.com",
+    link: "https://react.dev/",
   },
   {
     icon: SiNextdotjs,
     name: "Next.js",
-    link: "https://example.com",
+    link: "https://nextjs.org/",
   },
   {
     icon: SiExpress,
     name: "Express",
-    link: "https://example.com",
+    link: "https://expressjs.com/",
   },
+  {
+    icon: SiTailwindcss,
+    name: "TailwindCSS",
+    link: "https://tailwindcss.com/",
+  },
+
   {
     icon: SiHtml5,
     name: "HTML",
-    link: "https://example.com",
+    link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
   },
   {
     icon: SiCss3,
     name: "CSS",
-    link: "https://example.com",
+    link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
   },
   {
     icon: SiPython,
     name: "Python",
-    link: "https://example.com",
+    link: "https://www.python.org/",
   },
   {
     icon: SiCplusplus,
     name: "C++",
-    link: "https://example.com",
+    link: "https://cplusplus.com/",
   },
   {
     icon: SiNodedotjs,
     name: "Node.js",
-    link: "https://example.com",
+    link: "https://nodejs.org/en",
   },
   {
     icon: SiMongodb,
     name: "MongoDB",
-    link: "https://example.com",
-  },
-  {
-    icon: SiDiscord,
-    name: "Discord",
-    link: "https://example.com",
+    link: "https://www.mongodb.com/",
   },
   {
     icon: SiGithub,
     name: "Github",
-    link: "https://example.com",
+    link: "https://github.com",
   },
   {
     icon: SiGoogle,
     name: "Google",
-    link: "https://example.com",
+    link: "https://google.com",
   },
-
   {
     icon: SiVisualstudiocode,
     name: "Visual Studio Code",
-    link: "https://example.com",
+    link: "https://code.visualstudio.com/",
   },
   {
     icon: SiNetlify,
     name: "Netlify",
-    link: "https://example.com",
+    link: "https://www.netlify.com/",
   },
   {
     icon: SiVercel,
     name: "Vercel",
-    link: "https://example.com",
+    link: "https://vercel.com/",
   },
 ];
