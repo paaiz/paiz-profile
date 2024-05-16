@@ -1,6 +1,6 @@
 .social-header {
   background-color: #00346e;
-  color: white;
+  color: #faf9f6;
   height: 270px;
   padding: 5rem 4rem 4rem 2rem;
 }
@@ -21,7 +21,7 @@
 }
 
 .social-content a {
-  color: white;
+  color: #faf9f6;
 }
 
 .social-link {
@@ -47,7 +47,7 @@
   left: 32.5px;
   letter-spacing: 1px;
   position: absolute;
-  color: white;
+  color: #faf9f6;
 }
 
 .inside h1 {
@@ -58,7 +58,7 @@
   left: 65px;
   letter-spacing: 1px;
   position: absolute;
-  color: white;
+  color: #faf9f6;
 }
 
 .social-link:hover {
