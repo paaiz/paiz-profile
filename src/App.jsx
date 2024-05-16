@@ -10,6 +10,7 @@ import Social from "@/components/menu/Social";
 
 import BornTime from "@/components/BornTime";
 import Callsign from "@/components/Callsign";
+import Loader from "@/components/Loader";
 
 export default function App() {
   const [panel, setPanel] = useState(null);
@@ -23,8 +24,8 @@ export default function App() {
   ];
 
   const socials = [
-    { icon: SiGithub, link: "https://example.com" },
-    { icon: SiInstagram, link: "https://example.com" },
+    { icon: SiGithub, link: "https://github.com/PaizTralala" },
+    { icon: SiInstagram, link: "https://www.instagram.com/faizdzaki_/" },
   ];
 
   const closePanel = () => {
@@ -104,6 +105,8 @@ export default function App() {
             <BornTime />
           </div>
         </div>
+
+        <Loader />
       </div>
     </>
   );
