@@ -1,0 +1,44 @@
+.initial-loading {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: black;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 1;
+
+  transition: opacity 200ms ease-in-out;
+}
+
+.loading-icon {
+  background-color: var(--main-color);
+  border-radius: 10px;
+  border: 1px solid #cecece;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 15px;
+  padding: 5px;
+}
+
+.loading-icon p {
+  color: var(--paragraph-color);
+  margin: 10px;
+}
+
+.loading-icon svg {
+  margin: 10px;
+}
+
+.initial-loading[transition-state="true"] {
+  opacity: 0;
+}
+
+.initial-loading[display-state="true"] {
+  display: none;
+}
