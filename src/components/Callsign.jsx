@@ -7,22 +7,36 @@ import getUserData from "@/api/discordUser";
 
 export default function Callsign() {
   const [user, setUser] = useState([]);
-  const [status, setStatus] = useState({});
   const [isLoading, setLoading] = useState(true);
 
-  useEffect(() => {
-    (async () => {
+  const requestUserData = () => {
+    const requestInterval = setInterval(async () => {
+      let userData = [];
       const { data, statusBeautify } = await getUserData();
 
-      setUser(data.discord_user);
-      setStatus({
+      userData.push({
+        user: data.discord_user,
         image: `/assets/discord_status/${data.discord_status}.png`,
         status: statusBeautify,
         onMobile: data.active_on_discord_mobile,
       });
 
+      setUser(userData);
+
       setLoading(false);
-    })();
+    }, 5 * 1000);
+
+    return () => {
+      clearInterval(requestInterval);
+    };
+  };
+
+  useEffect(() => {
+    const cleanupRequestUserData = requestUserData();
+
+    return () => {
+      cleanupRequestUserData();
+    };
   });
 
   return (
@@ -31,7 +45,7 @@ export default function Callsign() {
         <Skeleton variant="circular" width={32} height={32} sx={{ bgcolor: "grey.900" }} />
       ) : (
         <img
-          src={`https://cdn.discordapp.com/avatars/937876388554375188/${user.avatar}`}
+          src={`https://cdn.discordapp.com/avatars/937876388554375188/${user[0].user.avatar}`}
           alt="DISCORD_PROFILE"
         />
       )}
@@ -39,7 +53,7 @@ export default function Callsign() {
       {isLoading ? (
         <Skeleton variant="text" sx={{ bgcolor: "grey.900", width: "80px", marginLeft: "5px" }} />
       ) : (
-        <p>@{user.username}</p>
+        <p>@{user[0].user.username}</p>
       )}
 
       <div className="status-container">
@@ -53,7 +67,7 @@ export default function Callsign() {
               sx={{ bgcolor: "grey.900", marginLeft: "5px" }}
             />
           ) : (
-            <img src={status.image} alt="STATUS_IMAGE" />
+            <img src={user[0].image} alt="STATUS_IMAGE" />
           )}
 
           {isLoading ? (
@@ -62,7 +76,7 @@ export default function Callsign() {
               sx={{ bgcolor: "grey.900", width: "80px", marginLeft: "5px" }}
             />
           ) : (
-            <i>{status.status}</i>
+            <i>{user[0].status}</i>
           )}
         </div>
       </div>
