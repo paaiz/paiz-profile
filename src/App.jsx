@@ -1,7 +1,7 @@
 import "@/styles/index.css";
 
 import { useEffect, useState } from "react";
-import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
+import { SiGithub, SiLinkedin } from "@icons-pack/react-simple-icons";
 
 import About from "@/components/menu/About";
 import Projects from "@/components/menu/Projects";
@@ -24,9 +24,20 @@ export default function App() {
   ];
 
   const socials = [
-    { icon: SiGithub, link: "https://github.com/PaizTralala" },
-    { icon: SiInstagram, link: "https://www.instagram.com/faizdzaki_/" },
+    { icon: SiGithub, link: "https://github.com/paaiz" },
+    { icon: SiLinkedin, link: "https://linkedin.com/in/faizdzaki/" },
   ];
+
+  const components = {
+    about: <About />,
+    projects: <Projects />,
+    tools: <Tools />,
+    social: <Social />,
+  };
+
+  const PanelComponent = ({ panel }) => {
+    return components[panel] || null;
+  };
 
   const closePanel = () => {
     setIsPanelVisible(false);
@@ -46,20 +57,13 @@ export default function App() {
           overflow: isPanelVisible ? "auto" : "hidden",
         }}
       >
-        <div className="close-btn">
-          <button className="xmark" onClick={() => closePanel()}>
-            <div className="line"></div>
+        <div className="hamburger-container">
+          <button className="hamburger" onClick={() => closePanel()}>
+            <span className="line"></span>
           </button>
         </div>
 
-        {/* Menu here */}
-        {"about" === panel && <About />}
-
-        {"projects" === panel && <Projects />}
-
-        {"tools" === panel && <Tools />}
-
-        {"social" === panel && <Social />}
+        <PanelComponent panel={panel} />
       </div>
 
       <div className="container" data-appear={panel == null}>

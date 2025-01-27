@@ -1,6 +1,6 @@
 .about-bg {
   height: 100vh;
-  background-color: #faf9f6;
+  background-color: var(--neutral-white);
   z-index: 1;
 }
 
@@ -62,6 +62,7 @@
 
 .about-section p {
   font-size: 20px;
+  margin-top: 5px;
 }
 
 .about-profile {

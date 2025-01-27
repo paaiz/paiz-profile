@@ -23,10 +23,13 @@ export default function About() {
             <h1>Short Bio</h1>
             <span></span>
           </div>
+
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id iste modi ipsam officia
-            accusantium assumenda quaerat exercitationem error tenetur? Magnam et obcaecati, maiores
-            similique deleniti cupiditate. Saepe libero dolores maiores?
+            Currently studying <strong>Computer Engineering</strong> at{" "}
+            <strong>Institute of Technology Sepuluh Nopember.</strong> Interested in technologies
+            since the beginning of Covid-19 at <strong>March 2020</strong> and still does
+            programming in my freetime. I have a passion for learning new things and solving
+            problems.
           </p>
         </div>
       </div>

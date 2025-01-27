@@ -1,18 +1,8 @@
 .social-header {
   background-color: #00346e;
-  color: #faf9f6;
+  color: var(--neutral-white);
   height: 270px;
   padding: 5rem 4rem 4rem 2rem;
-}
-
-.social-header h1 {
-  font-size: 45px;
-  margin: 0;
-}
-
-.social-header p {
-  font-size: 20px;
-  font-weight: 100;
 }
 
 .social-content {
@@ -21,7 +11,7 @@
 }
 
 .social-content a {
-  color: #faf9f6;
+  color: var(--neutral-white);
 }
 
 .social-link {
@@ -47,7 +37,7 @@
   left: 32.5px;
   letter-spacing: 1px;
   position: absolute;
-  color: #faf9f6;
+  color: var(--neutral-white);
 }
 
 .inside h1 {
@@ -58,7 +48,7 @@
   left: 65px;
   letter-spacing: 1px;
   position: absolute;
-  color: #faf9f6;
+  color: var(--neutral-white);
 }
 
 .social-link:hover {

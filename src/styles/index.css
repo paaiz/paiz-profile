@@ -4,7 +4,7 @@
 
   --paragraph-color: #c4c4c4;
 
-  --xmark-color: #faf9f6;
+  --neutral-white: #faf9f6;
 }
 
 * {
@@ -163,16 +163,15 @@ body {
   transform: translateX(0);
 }
 
-.xmark {
+.hamburger {
   border: 0;
   background-color: inherit;
   width: 55px;
   height: 40px;
   cursor: pointer;
-  position: block;
 }
 
-.xmark:hover {
+.hamburger:hover {
   opacity: 0.6;
 }
 
@@ -186,21 +185,24 @@ body {
   width: 45px;
 }
 
+.line::before,
+.line::after {
+  background-color: var(--neutral-white);
+}
+
 .line::after {
   left: 0;
   height: 4px;
-  background-color: var(--xmark-color);
   rotate: -45deg;
 }
 
 .line::before {
   left: 0;
   height: 4px;
-  background-color: var(--xmark-color);
   rotate: 45deg;
 }
 
-.close-btn {
+.hamburger-container {
   position: absolute;
   top: 25px;
   right: 15px;
@@ -209,6 +211,18 @@ body {
   transition: opacity 0.1s linear;
   z-index: 99;
 }
+
+/* Menu Styling */
+.title {
+  font-size: 45px;
+  margin: 0;
+}
+
+.paragraph {
+  font-size: 20px;
+  font-weight: 100;
+}
+/* End of menu styling */
 
 @media screen and (max-width: 900px) {
   .content {

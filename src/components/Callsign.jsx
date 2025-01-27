@@ -12,17 +12,28 @@ export default function Callsign() {
   const requestUserData = () => {
     const requestInterval = setInterval(async () => {
       let userData = [];
-      const { data, statusBeautify } = await getUserData();
 
-      userData.push({
-        user: data.discord_user,
-        image: `/assets/discord_status/${data.discord_status}.png`,
-        status: statusBeautify,
-        onMobile: data.active_on_discord_mobile,
-      });
+      try {
+        const { data, statusBeautify } = await getUserData();
+
+        userData.push({
+          user: data.discord_user,
+          image: `/assets/discord_status/${data.discord_status}.png`,
+          status: statusBeautify,
+          onMobile: data.active_on_discord_mobile,
+        });
+      } catch (err) {
+        userData.push({
+          user: "Error",
+          image: null,
+          status: "Error",
+          onMobile: null,
+        });
+
+        console.log(err);
+      }
 
       setUser(userData);
-
       setLoading(false);
     }, 5 * 1000);
 

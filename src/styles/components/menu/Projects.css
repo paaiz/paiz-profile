@@ -1,0 +1,121 @@
+.projects-header {
+  background-color: rgb(66, 39, 105);
+  color: var(--neutral-white);
+  height: 270px;
+  padding: 5rem 4rem 4rem 2rem;
+}
+
+.cards-container {
+  position: relative;
+  height: 10pc;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.cards-container + .cards-container {
+  margin-top: 0;
+}
+
+.cards-container:hover {
+  cursor: pointer;
+}
+
+.cards-container::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cards-container .bg-low {
+  background-color: var(--secondary-color);
+  opacity: 1;
+}
+
+.hover-bar {
+  position: relative;
+  width: 0;
+  height: 5px;
+  background-color: #faf9f6;
+  transition: width 1s ease-in-out;
+}
+
+.hover-bar.hovered {
+  width: 100%;
+}
+
+/* Project Details */
+.details-bg {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  animation: opacity, transform 0.7s cubic-bezier(0.87, 0, 0.13, 1);
+  transform: translateY(100%);
+}
+
+.details-bg.slide-up {
+  transform: translateY(0);
+}
+
+.details-bg.slide-down {
+  transform: translateY(100%);
+}
+
+/* .details-bg {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  animation: transform 0.7s cubic-bezier(0.87, 0, 0.13, 1);
+  transform: translateY(0);
+}
+
+.details-bg.slide-up {
+  transform: translateY(0);
+}
+
+.details-bg.slide-down {
+  transform: translateY(100%);
+} */
+
+.project-details {
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  height: 100%;
+}
+
+.project-details h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.project-details p {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.project-tools svg {
+  margin-top: 5px;
+}
+
+.project-tools svg + svg {
+  margin-left: 10px;
+  border-radius: 1px;
+}
